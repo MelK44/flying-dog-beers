@@ -4,29 +4,36 @@ import dash_html_components as html
 import plotly.graph_objs as go
 
 ########### Set up the chart
-beers=['Spring', 'Summer', 'Winter', 'Fall']
-ibu_values=[65, 80, 42, 60]
-abv_values=[55, 70, 25, 40]
+cereals=['Apple Jacks', 'Cinnamon Toast Crunch', 'Fruit Loops', 'Frosted Flakes','Lucky Charms','Quaker Oat Squares','Special K']
+protein=[2, 1, 2, 1, 2, 4, 6]
+sugars=[14, 9, 13, 11, 12, 6, 3]
+cups=[1, 0.75, 1, 0.75, 1, 0.5, 1]
 color1='orange'
 color2='darkred'
+color3='purple'
 
-bitterness = go.Bar(
-    x=beers,
-    y=ibu_values,
-    name='IBU',
+protein = go.Bar(
+    x=cereals,
+    y=protein,
+    name='Protein',
     marker={'color':color1}
 )
-alcohol = go.Bar(
-    x=beers,
-    y=abv_values,
-    name='ABV',
+sugars = go.Bar(
+    x=cereals,
+    y=sugars,
+    name='Sugar',
     marker={'color':color2}
 )
-
-beer_data = [bitterness, alcohol]
+cups = go.Bar(
+    x=cereals,
+    y=cups,
+    name='Serving Size',
+    marker={'color':color3}
+)
+beer_data = [protein, sugars, cups]
 beer_layout = go.Layout(
     barmode='group',
-    title = 'Average Seasonal Temperatures'
+    title = 'Cereal Nutrition'
 )
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
