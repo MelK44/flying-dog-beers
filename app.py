@@ -4,10 +4,10 @@ import dash_html_components as html
 import plotly.graph_objs as go
 
 ########### Set up the chart
-beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
-ibu_values=[35, 60, 85, 75]
-abv_values=[5.4, 7.1, 9.2, 4.3]
-color1='lightorange'
+beers=['Spring', 'Summer', 'Winter', 'Fall']
+ibu_values=[65, 80, 42, 60]
+abv_values=[55, 70, 25, 40]
+color1='orange'
 color2='darkred'
 
 bitterness = go.Bar(
@@ -26,7 +26,7 @@ alcohol = go.Bar(
 beer_data = [bitterness, alcohol]
 beer_layout = go.Layout(
     barmode='group',
-    title = 'Beer Comparison'
+    title = 'Average Seasonal Temperatures'
 )
 
 beer_fig = go.Figure(data=beer_data, layout=beer_layout)
